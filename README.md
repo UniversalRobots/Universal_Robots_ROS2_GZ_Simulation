@@ -61,5 +61,10 @@ To configure and build workspace execute following commands:
 
 ## Running Executable
 ```
-ros2 launch ur_simulation_ignition
+ros2 launch ur_simulation_ignition ur_sim_control.launch.py
+```
+
+Move robot using test script from  `ur_bringup` package:
+```
+ros2 launch ur_bringup test_joint_trajectory_controller.launch.py
 ```
