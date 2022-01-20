@@ -44,6 +44,11 @@ Skip any of below steps is not applicable.
      Also, it is good practice to put the ROS version in the name of the workspace, for different tests you could just add a suffix to the base name `ros_ws_foxy`.
 
 1. Download the required repositories and install package dependencies:
+   **NOTE**: Current version is tested with Ignition version 5 ("edifice"). To get everything working properly set `IGNITION_VERSION` environment variable:
+   ```
+   export IGNITION_VERSION=edifice
+   ```
+   Then proceed with:
    ```
    cd $COLCON_WS
    git clone git@github.com:UniversalRobots/Universal_Robots_ROS2_Ignition_Simulation.git src/Universal_Robots_ROS2_Ignition_Simulation
@@ -51,6 +56,8 @@ Skip any of below steps is not applicable.
    rosdep install --ignore-src --from-paths src -y -r       # install also is there are unreleased packages
    cd ..
    ```
+
+
 
 ### Configure and Build Workspace:
 To configure and build workspace execute following commands:
@@ -67,4 +74,9 @@ ros2 launch ur_simulation_ignition ur_sim_control.launch.py
 Move robot using test script from  `ur_bringup` package:
 ```
 ros2 launch ur_bringup test_joint_trajectory_controller.launch.py
+```
+
+Example using MoveIt with simulated robot:
+```
+ros2 launch ur_simulation_ignition ur_sim_moveit.launch.py
 ```

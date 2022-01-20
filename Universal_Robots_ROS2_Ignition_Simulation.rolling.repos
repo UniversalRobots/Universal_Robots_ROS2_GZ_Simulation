@@ -1,8 +1,21 @@
 repositories:
   ign_ros2_control:
     type: git
-    url: https://github.com/ignitionrobotics/ign_ros2_control.git
-    version: ahcorde/galactic/ign_ros2_control
+    url: https://github.com/StoglRobotics-forks/ign_ros2_control.git
+    version: add-support-for-initial-position
+    #url: https://github.com/ignitionrobotics/ign_ros2_control.git
+    #version: main
+  ros_ign:
+    type: git
+    url: https://github.com/ignitionrobotics/ros_ign.git
+    version: ros2
+
+  moveit2:
+    type: git
+    url: https://github.com/destogl/moveit2.git
+    version: fix-controller-check-for-simulation
+    #url: https://github.com/ros-planning/moveit2.git
+    #version: main
 
   ros2_control:
     type: git

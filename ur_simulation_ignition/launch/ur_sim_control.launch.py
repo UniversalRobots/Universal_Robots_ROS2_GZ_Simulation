@@ -111,12 +111,15 @@ def launch_setup(context, *args, **kwargs):
             safety_k_position,
             " ",
             "name:=",
+            "ur",
+            " ",
+            "ur_type:=",
             ur_type,
             " ",
             "prefix:=",
             prefix,
             " ",
-            "ignition_sim:=true",
+            "sim_ignition:=true",
             " ",
             "simulation_controllers:=",
             initial_joint_controllers,
@@ -177,7 +180,7 @@ def launch_setup(context, *args, **kwargs):
             "-string",
             robot_description_content,
             "-name",
-            ur_type,
+            "ur",
             "-allow_renaming",
             "true",
         ],
@@ -262,7 +265,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "description_file",
-            default_value="ur_simulation.urdf.xacro",
+            default_value="ur.urdf.xacro",
             description="URDF/XACRO description file with the robot.",
         )
     )
