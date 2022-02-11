@@ -3,7 +3,7 @@ repositories:
   ign_ros2_control:
     type: git
     url: https://github.com/ignitionrobotics/ign_ros2_control.git
-    version: main
+    version: galactic
   ros_ign:
     type: git
     url: https://github.com/ignitionrobotics/ros_ign.git

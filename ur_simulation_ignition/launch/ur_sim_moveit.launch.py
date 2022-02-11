@@ -67,10 +67,11 @@ def launch_setup(context, *args, **kwargs):
 
     ur_moveit_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            [FindPackageShare("ur_moveit_config"), "/launch", "/ur_moveit.launch.py"]
+            [FindPackageShare("ur_simulation_ignition"), "/launch", "/ur_moveit.launch.py"]
         ),
         launch_arguments={
             "ur_type": ur_type,
+            "robot_ip": "yyy.yyy.yyy.yyy",# Fake IP address.
             "safety_limits": safety_limits,
             "description_package": description_package,
             "description_file": description_file,
