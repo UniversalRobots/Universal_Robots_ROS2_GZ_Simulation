@@ -187,6 +187,17 @@ def launch_setup(context, *args, **kwargs):
         ],
     )
 
+    # ros_ign_bridge (clock -> ROS 2)
+    ros_ign_bridge_node = Node(
+        package="ros_ign_bridge",
+        executable="parameter_bridge",
+        output="log",
+        arguments=[
+            "/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock"
+        ],
+        parameters=[{"use_sim_time": True}],
+    )
+
     ignition_launch_description = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [FindPackageShare("ros_ign_gazebo"), "/launch/ign_gazebo.launch.py"]
@@ -202,6 +213,7 @@ def launch_setup(context, *args, **kwargs):
         initial_joint_controller_spawner_started,
         ignition_spawn_entity,
         ignition_launch_description,
+        ros_ign_bridge_node,
     ]
 
     return nodes_to_start
