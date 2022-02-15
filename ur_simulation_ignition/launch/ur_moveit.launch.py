@@ -123,10 +123,9 @@ def launch_setup(context, *args, **kwargs):
     )
     robot_description_semantic = {"robot_description_semantic": robot_description_semantic_content}
 
-    kinematics_yaml = load_yaml("ur_moveit_config", "config/kinematics.yaml")
-    #kinematics_yaml = PathJoinSubstitution(
-    #    [FindPackageShare(moveit_config_package), "config", "kinematics.yaml"]
-    #)
+    kinematics_yaml = PathJoinSubstitution(
+        [FindPackageShare(moveit_config_package), "config", "kinematics.yaml"]
+    )
     robot_description_kinematics = {"robot_description_kinematics": kinematics_yaml}
 
     robot_description_planning = {
@@ -141,7 +140,9 @@ def launch_setup(context, *args, **kwargs):
             "start_state_max_bounds_error": 0.1,
         }
     }
-    ompl_planning_yaml = load_yaml("ur_moveit_config", "config/ompl_planning.yaml")
+    ompl_planning_yaml = PathJoinSubstitution(
+        [FindPackageShare(moveit_config_package), "config", "ompl_planning.yaml"]
+    )
     ompl_planning_pipeline_config["move_group"].update(ompl_planning_yaml)
 
     # Trajectory Execution Configuration
@@ -216,7 +217,9 @@ def launch_setup(context, *args, **kwargs):
     )
 
     # Servo node for realtime control
-    servo_yaml = load_yaml("ur_moveit_config", "config/ur_servo.yaml")
+    servo_yaml = PathJoinSubstitution(
+        [FindPackageShare(moveit_config_package), "config", "ur_servo.yaml"]
+    )
     servo_params = {"moveit_servo": servo_yaml}
     servo_node = Node(
         package="moveit_servo",
