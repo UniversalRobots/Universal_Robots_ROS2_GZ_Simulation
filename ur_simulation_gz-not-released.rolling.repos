@@ -1,0 +1,5 @@
+repositories:
+  gz_ros2_control:
+    type: git
+    url: https://github.com/ignitionrobotics/gz_ros2_control.git
+    version: master
