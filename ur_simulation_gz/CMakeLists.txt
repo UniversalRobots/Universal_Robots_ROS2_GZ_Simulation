@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(ur_simulation_ignition)
+project(ur_simulation_gz)
 
 find_package(ament_cmake REQUIRED)
 
