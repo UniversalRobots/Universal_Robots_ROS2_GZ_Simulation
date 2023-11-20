@@ -51,7 +51,7 @@ def launch_setup(context, *args, **kwargs):
 
     ur_control_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            [FindPackageShare("ur_simulation_ignition"), "/launch", "/ur_sim_control.launch.py"]
+            [FindPackageShare("ur_simulation_gz"), "/launch", "/ur_sim_control.launch.py"]
         ),
         launch_arguments={
             "ur_type": ur_type,
@@ -112,7 +112,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "runtime_config_package",
-            default_value="ur_simulation_ignition",
+            default_value="ur_simulation_gz",
             description='Package with the controller\'s configuration in "config" folder. \
         Usually the argument is not set, it enables use of a custom setup.',
         )
