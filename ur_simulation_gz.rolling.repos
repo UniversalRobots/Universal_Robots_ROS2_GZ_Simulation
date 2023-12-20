@@ -1,7 +1,7 @@
 repositories:
   ign_ros2_control:
     type: git
-    url: https://github.com/ignitionrobotics/gz_ros2_control.git
+    url: https://github.com/ros-controls/gz_ros2_control.git
     version: master
   ros_ign:
     type: git
@@ -11,6 +11,10 @@ repositories:
     type: git
     url: https://github.com/ros-planning/moveit2.git
     version: main
+  moveit_msgs:
+    type: git
+    url: https://github.com/ros-planning/moveit_msgs.git
+    version: ros2
   ros2_control:
     type: git
     url: https://github.com/ros-controls/ros2_control.git
