@@ -60,7 +60,7 @@ def launch_setup(context, *args, **kwargs):
             "controllers_file": controllers_file,
             "description_package": description_package,
             "description_file": description_file,
-            "prefix": prefix,
+            "tf_prefix": prefix,
             "launch_rviz": "false",
         }.items(),
     )
@@ -76,7 +76,7 @@ def launch_setup(context, *args, **kwargs):
             "description_file": description_file,
             "moveit_config_package": moveit_config_package,
             "moveit_config_file": moveit_config_file,
-            "prefix": prefix,
+            "prefix": prefix,  # ur_moveit_config uses "prefix" in the SRDF, as opposed to "tf_prefix" used in ur_description URDF's
             "use_sim_time": "true",
             "launch_rviz": "true",
         }.items(),

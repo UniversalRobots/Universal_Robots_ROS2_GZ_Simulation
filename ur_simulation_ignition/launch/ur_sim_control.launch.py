@@ -55,7 +55,7 @@ def launch_setup(context, *args, **kwargs):
     controllers_file = LaunchConfiguration("controllers_file")
     description_package = LaunchConfiguration("description_package")
     description_file = LaunchConfiguration("description_file")
-    prefix = LaunchConfiguration("prefix")
+    tf_prefix = LaunchConfiguration("tf_prefix")
     activate_joint_controller = LaunchConfiguration("activate_joint_controller")
     initial_joint_controller = LaunchConfiguration("initial_joint_controller")
     launch_rviz = LaunchConfiguration("launch_rviz")
@@ -91,8 +91,8 @@ def launch_setup(context, *args, **kwargs):
             "ur_type:=",
             ur_type,
             " ",
-            "prefix:=",
-            prefix,
+            "tf_prefix:=",
+            tf_prefix,
             " ",
             "sim_ignition:=true",
             " ",
@@ -147,9 +147,9 @@ def launch_setup(context, *args, **kwargs):
         condition=UnlessCondition(activate_joint_controller),
     )
 
-    # Ignition nodes
-    ignition_spawn_entity = Node(
-        package="ros_ign_gazebo",
+    # Gazebo (ignition) nodes
+    gz_spawn_entity = Node(
+        package="ros_gz_sim",
         executable="create",
         output="screen",
         arguments=[
@@ -162,11 +162,11 @@ def launch_setup(context, *args, **kwargs):
         ],
     )
 
-    ignition_launch_description = IncludeLaunchDescription(
+    gz_launch_description = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            [FindPackageShare("ros_ign_gazebo"), "/launch/ign_gazebo.launch.py"]
+            [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
         ),
-        launch_arguments={"ign_args": " -r -v 3 empty.sdf"}.items(),
+        launch_arguments={"gz_args": " -r -v 3 empty.sdf"}.items(),
     )
 
     nodes_to_start = [
@@ -175,8 +175,8 @@ def launch_setup(context, *args, **kwargs):
         delay_rviz_after_joint_state_broadcaster_spawner,
         initial_joint_controller_spawner_stopped,
         initial_joint_controller_spawner_started,
-        ignition_spawn_entity,
-        ignition_launch_description,
+        gz_spawn_entity,
+        gz_launch_description,
     ]
 
     return nodes_to_start
@@ -247,7 +247,7 @@ def generate_launch_description():
     )
     declared_arguments.append(
         DeclareLaunchArgument(
-            "prefix",
+            "tf_prefix",
             default_value='""',
             description="Prefix of the joint names, useful for \
         multi-robot setup. If changed than also joint names in the controllers' configuration \
