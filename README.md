@@ -13,8 +13,8 @@ Example files and configurations for Gazebo simulation of Universal Robots' mani
   </tr>
   <tr>
     <th>Branch</th>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/ros2">ros2</a></td>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/ros2">ros2</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/humble">ros2</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/iron">ros2</a></td>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/ros2">ros2</a></td>
   </tr>
   <tr>
@@ -64,10 +64,8 @@ Skip any of below steps is not applicable.
 1. Download the required repositories and install package dependencies:
    ```
    cd $COLCON_WS
-   git clone git@github.com:UniversalRobots/Universal_Robots_ROS2_Ignition_Simulation.git src/ur_simulation_gz
-   vcs import src --input src/Universal_Robots_ROS2_Ignition_Simulation/ur_simulation_gz.<ros-distro>.repos
-   rosdep install --ignore-src --from-paths src -y
-   cd ..
+   git clone -b humble https://github.com/UniversalRobots/Universal_Robots_ROS2_Ignition_Simulation.git src/ur_simulation_gz
+   rosdep update && rosdep install --ignore-src --from-paths src -y
    ```
 
 
@@ -76,10 +74,16 @@ Skip any of below steps is not applicable.
 To configure and build workspace execute following commands:
   ```
   cd $COLCON_WS
-  colcon build --symlink-install --mixin rel-with-deb-info compile-commands ccache
+  colcon build --symlink-install
   ```
 
 ## Running Executable
+First, source your workspace
+
+```
+source $COLCON_WS/install/setup.bash
+```
+
 ```
 ros2 launch ur_simulation_gz ur_sim_control.launch.py
 ```
