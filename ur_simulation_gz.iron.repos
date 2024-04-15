@@ -1,25 +1,25 @@
 repositories:
   gz_ros2_control:
     type: git
-    url: https://github.com/ignitionrobotics/gz_ros2_control.git
-    version: humble
-  ros_ign:
+    url: https://github.com/ros-controls/gz_ros2_control.git
+    version: iron
+  ros_gz:
     type: git
-    url: https://github.com/ignitionrobotics/ros_ign.git
-    version: humble
+    url: https://github.com/gazebosim/ros_gz
+    version: iron
   moveit2:
     type: git
     url: https://github.com/ros-planning/moveit2.git
-    version: humble
+    version: iron
   ros2_control:
     type: git
     url: https://github.com/ros-controls/ros2_control.git
-    version: humble
+    version: iron
   ros2_controllers:
     type: git
     url: https://github.com/ros-controls/ros2_controllers.git
-    version: humble
+    version: iron
   Universal_Robots_ROS2_Description:
     type: git
     url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git
-    version: humble
+    version: iron

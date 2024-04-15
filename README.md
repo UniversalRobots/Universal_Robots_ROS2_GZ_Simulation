@@ -64,7 +64,7 @@ Skip any of below steps is not applicable.
 1. Download the required repositories and install package dependencies:
    ```
    cd $COLCON_WS
-   git clone -b humble https://github.com/UniversalRobots/Universal_Robots_ROS2_Ignition_Simulation.git src/ur_simulation_gz
+   git clone -b iron https://github.com/UniversalRobots/Universal_Robots_ROS2_Ignition_Simulation.git src/ur_simulation_gz
    rosdep update && rosdep install --ignore-src --from-paths src -y
    ```
 
