@@ -6,8 +6,9 @@
   <description>Example and configuration files for Gazebo simulation of UR manipulators.</description>
 
   <author>Lovro Ivanov</author>
+  <author email="denis@stoglrobotics.de">Denis Stogl</maintainer>
 
-  <maintainer email="denis@stoglrobotics.de">Denis Stogl</maintainer>
+  <maintainer email="exner@fzi.de">Felix Exner</maintainer>
 
   <license>BSD-3-Clause</license>
 
