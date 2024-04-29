@@ -97,3 +97,25 @@ Example using MoveIt with simulated robot:
 ```
 ros2 launch ur_simulation_gz ur_sim_moveit.launch.py
 ```
+
+
+## Using a custom tf_prefix
+
+In case you would like to use a custom prefix to your simulated robot, you can provide one by
+passing the `tf_prefix` to the control launchfile:
+
+``` bash
+ros2 launch ur_simulation_gz ur_sim_control.launch.py tf_prefix:=my_ur_
+```
+
+However, when doing so, you will have to provide your own controller configuration file. A
+corresponding file to the prefix above could look as in [this example](ur_simulation_gz/config/my_ur_controllers.yaml).
+
+Therefore, the following would work:
+```bash
+ros2 launch ur_simulation_gz ur_sim_control.launch.py tf_prefix:=my_ur_ \
+  controllers_file:=my_ur_controllers.yaml
+```
+
+Using the `$(var tf_prefix)` notation as in the driver does not work here, since the file is loaded
+differently, where (to our knowledge) no variable substitution is possible.
