@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>ur_simulation_ignition</name>
+  <name>ur_simulation_gz</name>
   <version>0.0.0</version>
-  <description>Example and configuration files for Gazebo Ignition simulation of UR manipulators.</description>
+  <description>Example and configuration files for Gazebo simulation of UR manipulators.</description>
 
   <author>Lovro Ivanov</author>
+  <author email="denis@stoglrobotics.de">Denis Stogl</author>
 
-  <maintainer email="denis@stoglrobotics.de">Denis Stogl</maintainer>
+  <maintainer email="exner@fzi.de">Felix Exner</maintainer>
 
   <license>BSD-3-Clause</license>
 
@@ -16,7 +17,8 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <exec_depend>ign_ros2_control</exec_depend>
+  <exec_depend>ros_gz_sim</exec_depend>
+  <exec_depend>gz_ros2_control</exec_depend>
   <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>
@@ -25,6 +27,8 @@
   <exec_depend>ur_moveit_config</exec_depend>
   <exec_depend>urdf</exec_depend>
   <exec_depend>xacro</exec_depend>
+
+  <test_depend>ament_cmake_pytest</test_depend>
 
   <export>
     <build_type>ament_cmake</build_type>

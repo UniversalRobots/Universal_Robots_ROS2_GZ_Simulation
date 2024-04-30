@@ -36,7 +36,6 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def launch_setup(context, *args, **kwargs):
-
     # Initialize Arguments
     ur_type = LaunchConfiguration("ur_type")
     safety_limits = LaunchConfiguration("safety_limits")
@@ -51,7 +50,7 @@ def launch_setup(context, *args, **kwargs):
 
     ur_control_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            [FindPackageShare("ur_simulation_ignition"), "/launch", "/ur_sim_control.launch.py"]
+            [FindPackageShare("ur_simulation_gz"), "/launch", "/ur_sim_control.launch.py"]
         ),
         launch_arguments={
             "ur_type": ur_type,
@@ -97,7 +96,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "ur_type",
             description="Type/series of used UR robot.",
-            choices=["ur3", "ur3e", "ur5", "ur5e", "ur10", "ur10e", "ur16e"],
+            choices=["ur3", "ur3e", "ur5", "ur5e", "ur10", "ur10e", "ur16e", "ur20", "ur30"],
             default_value="ur5e",
         )
     )
@@ -112,7 +111,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "runtime_config_package",
-            default_value="ur_simulation_ignition",
+            default_value="ur_simulation_gz",
             description='Package with the controller\'s configuration in "config" folder. \
         Usually the argument is not set, it enables use of a custom setup.',
         )

@@ -1,0 +1,25 @@
+repositories:
+  gz_ros2_control:
+    type: git
+    url: https://github.com/ros-controls/gz_ros2_control.git
+    version: humble
+  ros_gz:
+    type: git
+    url: https://github.com/gazebosim/ros_gz
+    version: humble
+  moveit2:
+    type: git
+    url: https://github.com/ros-planning/moveit2.git
+    version: humble
+  ros2_control:
+    type: git
+    url: https://github.com/ros-controls/ros2_control.git
+    version: humble
+  ros2_controllers:
+    type: git
+    url: https://github.com/ros-controls/ros2_controllers.git
+    version: humble
+  Universal_Robots_ROS2_Description:
+    type: git
+    url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git
+    version: humble
