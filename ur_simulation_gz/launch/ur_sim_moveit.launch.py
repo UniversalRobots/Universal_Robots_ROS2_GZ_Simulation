@@ -31,7 +31,7 @@
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -44,13 +44,14 @@ def launch_setup(context, *args, **kwargs):
     controllers_file = LaunchConfiguration("controllers_file")
     description_package = LaunchConfiguration("description_package")
     description_file = LaunchConfiguration("description_file")
-    moveit_config_package = LaunchConfiguration("moveit_config_package")
-    moveit_config_file = LaunchConfiguration("moveit_config_file")
+    moveit_launch_file = LaunchConfiguration("moveit_launch_file")
     prefix = LaunchConfiguration("prefix")
 
     ur_control_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            [FindPackageShare("ur_simulation_gz"), "/launch", "/ur_sim_control.launch.py"]
+            PathJoinSubstitution(
+                [FindPackageShare("ur_simulation_gz"), "launch", "ur_sim_control.launch.py"]
+            )
         ),
         launch_arguments={
             "ur_type": ur_type,
@@ -65,17 +66,9 @@ def launch_setup(context, *args, **kwargs):
     )
 
     ur_moveit_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            [FindPackageShare("ur_moveit_config"), "/launch", "/ur_moveit.launch.py"]
-        ),
+        PythonLaunchDescriptionSource(moveit_launch_file),
         launch_arguments={
             "ur_type": ur_type,
-            "safety_limits": safety_limits,
-            "description_package": description_package,
-            "description_file": description_file,
-            "moveit_config_package": moveit_config_package,
-            "moveit_config_file": moveit_config_file,
-            "prefix": prefix,
             "use_sim_time": "true",
             "launch_rviz": "true",
         }.items(),
@@ -140,17 +133,16 @@ def generate_launch_description():
     )
     declared_arguments.append(
         DeclareLaunchArgument(
-            "moveit_config_package",
-            default_value="ur_moveit_config",
-            description="MoveIt config package with robot SRDF/XACRO files. Usually the argument "
+            "moveit_launch_file",
+            default_value=PathJoinSubstitution(
+                [
+                    FindPackageShare("ur_moveit_config"),
+                    "launch",
+                    "ur_moveit.launch.py",
+                ]
+            ),
+            description="Absolute path for MoveIt launch file, part of a config package with robot SRDF/XACRO files. Usually the argument "
             "is not set, it enables use of a custom moveit config.",
-        )
-    )
-    declared_arguments.append(
-        DeclareLaunchArgument(
-            "moveit_config_file",
-            default_value="ur.srdf.xacro",
-            description="MoveIt SRDF/XACRO description file with the robot.",
         )
     )
     declared_arguments.append(
