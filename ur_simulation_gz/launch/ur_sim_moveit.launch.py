@@ -31,7 +31,7 @@
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -49,7 +49,9 @@ def launch_setup(context, *args, **kwargs):
 
     ur_control_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            [FindPackageShare("ur_simulation_gz"), "/launch", "/ur_sim_control.launch.py"]
+            PathJoinSubstitution(
+                [FindPackageShare("ur_simulation_gz"), "launch", "ur_sim_control.launch.py"]
+            )
         ),
         launch_arguments={
             "ur_type": ur_type,
@@ -132,11 +134,13 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "moveit_launch_file",
-            default_value=[
-                FindPackageShare("ur_moveit_config"),
-                "/launch",
-                "/ur_moveit.launch.py",
-            ],
+            default_value=PathJoinSubstitution(
+                [
+                    FindPackageShare("ur_moveit_config"),
+                    "launch",
+                    "ur_moveit.launch.py",
+                ]
+            ),
             description="Absolute path for MoveIt launch file, part of a config package with robot SRDF/XACRO files. Usually the argument "
             "is not set, it enables use of a custom moveit config.",
         )
