@@ -61,24 +61,20 @@ def launch_setup(context, *args, **kwargs):
     prefix = LaunchConfiguration("prefix")
     activate_joint_controller = LaunchConfiguration("activate_joint_controller")
     initial_joint_controller = LaunchConfiguration("initial_joint_controller")
+    description_file = LaunchConfiguration("description_file")
     launch_rviz = LaunchConfiguration("launch_rviz")
+    rviz_config_file = LaunchConfiguration("rviz_config_file")
     gazebo_gui = LaunchConfiguration("gazebo_gui")
 
     initial_joint_controllers = PathJoinSubstitution(
         [FindPackageShare(runtime_config_package), "config", controllers_file]
     )
 
-    rviz_config_file = PathJoinSubstitution(
-        [FindPackageShare("ur_description"), "rviz", "view_robot.rviz"]
-    )
-
     robot_description_content = Command(
         [
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
-            PathJoinSubstitution(
-                [FindPackageShare("ur_simulation_gz"), "urdf", "ur_gz.urdf.xacro"]
-            ),
+            description_file,
             " ",
             "safety_limits:=",
             safety_limits,
@@ -260,7 +256,25 @@ def generate_launch_description():
         )
     )
     declared_arguments.append(
+        DeclareLaunchArgument(
+            "description_file",
+            default_value=PathJoinSubstitution(
+                [FindPackageShare("ur_simulation_gz"), "urdf", "ur_gz.urdf.xacro"]
+            ),
+            description="URDF/XACRO description file (absolute path) with the robot.",
+        )
+    )
+    declared_arguments.append(
         DeclareLaunchArgument("launch_rviz", default_value="true", description="Launch RViz?")
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "rviz_config_file",
+            default_value=PathJoinSubstitution(
+                [FindPackageShare("ur_description"), "rviz", "view_robot.rviz"]
+            ),
+            description="Rviz config file (absolute path) to use when launching rviz.",
+        )
     )
     declared_arguments.append(
         DeclareLaunchArgument(
