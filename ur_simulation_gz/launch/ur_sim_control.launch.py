@@ -61,6 +61,7 @@ def launch_setup(context, *args, **kwargs):
     prefix = LaunchConfiguration("prefix")
     activate_joint_controller = LaunchConfiguration("activate_joint_controller")
     initial_joint_controller = LaunchConfiguration("initial_joint_controller")
+    description_file = LaunchConfiguration("description_file")
     launch_rviz = LaunchConfiguration("launch_rviz")
     gazebo_gui = LaunchConfiguration("gazebo_gui")
 
@@ -76,9 +77,7 @@ def launch_setup(context, *args, **kwargs):
         [
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
-            PathJoinSubstitution(
-                [FindPackageShare("ur_simulation_gz"), "urdf", "ur_gz.urdf.xacro"]
-            ),
+            description_file,
             " ",
             "safety_limits:=",
             safety_limits,
@@ -257,6 +256,15 @@ def generate_launch_description():
             "initial_joint_controller",
             default_value="joint_trajectory_controller",
             description="Robot controller to start.",
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "description_file",
+            default_value=PathJoinSubstitution(
+                [FindPackageShare("ur_simulation_gz"), "urdf", "ur_gz.urdf.xacro"]
+            ),
+            description="URDF/XACRO description file (absolute path) with the robot.",
         )
     )
     declared_arguments.append(
