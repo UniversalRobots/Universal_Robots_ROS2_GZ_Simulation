@@ -56,7 +56,6 @@ def launch_setup(context, *args, **kwargs):
     safety_pos_margin = LaunchConfiguration("safety_pos_margin")
     safety_k_position = LaunchConfiguration("safety_k_position")
     # General arguments
-    runtime_config_package = LaunchConfiguration("runtime_config_package")
     controllers_file = LaunchConfiguration("controllers_file")
     tf_prefix = LaunchConfiguration("tf_prefix")
     activate_joint_controller = LaunchConfiguration("activate_joint_controller")
@@ -65,10 +64,6 @@ def launch_setup(context, *args, **kwargs):
     launch_rviz = LaunchConfiguration("launch_rviz")
     rviz_config_file = LaunchConfiguration("rviz_config_file")
     gazebo_gui = LaunchConfiguration("gazebo_gui")
-
-    initial_joint_controllers = PathJoinSubstitution(
-        [FindPackageShare(runtime_config_package), "config", controllers_file]
-    )
 
     robot_description_content = Command(
         [
@@ -95,7 +90,7 @@ def launch_setup(context, *args, **kwargs):
             tf_prefix,
             " ",
             "simulation_controllers:=",
-            initial_joint_controllers,
+            controllers_file,
         ]
     )
     robot_description = {"robot_description": robot_description_content}
@@ -219,17 +214,11 @@ def generate_launch_description():
     # General arguments
     declared_arguments.append(
         DeclareLaunchArgument(
-            "runtime_config_package",
-            default_value="ur_simulation_gz",
-            description='Package with the controller\'s configuration in "config" folder. '
-            "Usually the argument is not set, it enables use of a custom setup.",
-        )
-    )
-    declared_arguments.append(
-        DeclareLaunchArgument(
             "controllers_file",
-            default_value="ur_controllers.yaml",
-            description="YAML file with the controllers configuration.",
+            default_value=PathJoinSubstitution(
+                [FindPackageShare("ur_simulation_gz"), "config", "ur_controllers.yaml"]
+            ),
+            description="Absolute path to YAML file with the controllers configuration.",
         )
     )
     declared_arguments.append(
