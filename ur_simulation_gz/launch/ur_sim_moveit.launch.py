@@ -43,7 +43,6 @@ def launch_setup(context, *args, **kwargs):
     controllers_file = LaunchConfiguration("controllers_file")
     description_file = LaunchConfiguration("description_file")
     moveit_launch_file = LaunchConfiguration("moveit_launch_file")
-    prefix = LaunchConfiguration("prefix")
 
     ur_control_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -56,7 +55,6 @@ def launch_setup(context, *args, **kwargs):
             "safety_limits": safety_limits,
             "controllers_file": controllers_file,
             "description_file": description_file,
-            "tf_prefix": prefix,
             "launch_rviz": "false",
         }.items(),
     )
@@ -127,15 +125,6 @@ def generate_launch_description():
             ),
             description="Absolute path for MoveIt launch file, part of a config package with robot SRDF/XACRO files. Usually the argument "
             "is not set, it enables use of a custom moveit config.",
-        )
-    )
-    declared_arguments.append(
-        DeclareLaunchArgument(
-            "prefix",
-            default_value='""',
-            description="Prefix of the joint names, useful for "
-            "multi-robot setup. If changed than also joint names in the controllers' configuration "
-            "have to be updated.",
         )
     )
 
