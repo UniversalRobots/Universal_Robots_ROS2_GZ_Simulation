@@ -40,7 +40,6 @@ def launch_setup(context, *args, **kwargs):
     ur_type = LaunchConfiguration("ur_type")
     safety_limits = LaunchConfiguration("safety_limits")
     # General arguments
-    runtime_config_package = LaunchConfiguration("runtime_config_package")
     controllers_file = LaunchConfiguration("controllers_file")
     description_file = LaunchConfiguration("description_file")
     moveit_launch_file = LaunchConfiguration("moveit_launch_file")
@@ -55,7 +54,6 @@ def launch_setup(context, *args, **kwargs):
         launch_arguments={
             "ur_type": ur_type,
             "safety_limits": safety_limits,
-            "runtime_config_package": runtime_config_package,
             "controllers_file": controllers_file,
             "description_file": description_file,
             "tf_prefix": prefix,
@@ -101,17 +99,11 @@ def generate_launch_description():
     # General arguments
     declared_arguments.append(
         DeclareLaunchArgument(
-            "runtime_config_package",
-            default_value="ur_simulation_gz",
-            description='Package with the controller\'s configuration in "config" folder. '
-            "Usually the argument is not set, it enables use of a custom setup.",
-        )
-    )
-    declared_arguments.append(
-        DeclareLaunchArgument(
             "controllers_file",
-            default_value="ur_controllers.yaml",
-            description="YAML file with the controllers configuration.",
+            default_value=PathJoinSubstitution(
+                [FindPackageShare("ur_simulation_gz"), "config", "ur_controllers.yaml"]
+            ),
+            description="Absolute path to YAML file with the controllers configuration.",
         )
     )
     declared_arguments.append(
