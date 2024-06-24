@@ -9,7 +9,7 @@ Structure of the repository
 To set up the simulation the used files are:
 
 - ``urdf/ur_gz.ros2_control.xacro`` - macro for ros2_control configuration, defining the initial joint positions and the hardware interface plugin for the simulation
-- ``urdf/ur_gz.urdf.xacro`` - main file that contains the robot description, defines reference for the Gazebo world and initializes ros2_control Gazebo plugin. 
+- ``urdf/ur_gz.urdf.xacro`` - main file that contains the robot description, defines reference for the Gazebo world and initializes ros2_control Gazebo plugin.
 
 
 Usage
@@ -28,7 +28,7 @@ So, if only Gazebo and Rviz are needed:
 
    $ ros2 launch ur_simulation_gz ur_sim_control.launch.py ur_type:=ur10e
 
-If we also want to be able to use MoveIt!, then: 
+If we also want to be able to use MoveIt!, then:
 
 .. code-block:: bash
 
@@ -58,7 +58,7 @@ The first option is easily achievable by using the launch argument ``description
 Also here, like in the driver package, it is possible to specify tf_prefix using the ``tf_prefix`` launch argument, but for this package this is not the only step required. Since controllers loading is handled differently, it is necessary to define a custom controllers file with the desired tf_prefix. Assuming ``tf_prefix:="alice_"``, an example of such file could be:
 
 .. code-block:: yaml
-   
+
   controller_manager:
   ros__parameters:
     update_rate: 500  # Hz
@@ -91,8 +91,8 @@ Also here, like in the driver package, it is possible to specify tf_prefix using
     speed_scaling_state_broadcaster:
       ros__parameters:
         state_publish_rate: 100.0
-    
-    
+
+
     force_torque_sensor_broadcaster:
       ros__parameters:
         sensor_name: tcp_fts_sensor
@@ -105,8 +105,8 @@ Also here, like in the driver package, it is possible to specify tf_prefix using
           - torque.z
         frame_id: tool0
         topic_name: ft_data
-    
-    
+
+
     joint_trajectory_controller:
       ros__parameters:
         joints:
@@ -133,8 +133,8 @@ Also here, like in the driver package, it is possible to specify tf_prefix using
           wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
           wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
           wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
-    
-    
+
+
     scaled_joint_trajectory_controller:
       ros__parameters:
         joints:
@@ -161,7 +161,7 @@ Also here, like in the driver package, it is possible to specify tf_prefix using
           wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
           wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
           wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
-    
+
     forward_velocity_controller:
       ros__parameters:
         joints:
@@ -172,7 +172,7 @@ Also here, like in the driver package, it is possible to specify tf_prefix using
           - alice_wrist_2_joint
           - alice_wrist_3_joint
         interface_name: velocity
-    
+
     forward_position_controller:
       ros__parameters:
         joints:
@@ -183,15 +183,15 @@ Also here, like in the driver package, it is possible to specify tf_prefix using
           - alice_wrist_2_joint
           - alice_wrist_3_joint
 
-To load the newly defined file, it is possible to specify its absolute path with the ``controllers_file`` argument. Together with it the desired prefix should be also be speficied as argument, like in the following example:
+To load the newly defined file, it is possible to specify its absolute path with the ``controllers_file`` argument. Together with it the desired prefix should be also be specified as argument, like in the following example:
 
 .. code-block:: bash
 
    $ ros2 launch ur_simulation_gz ur_sim_control.launch.py ur_type:=ur10e tf_prefix:="alice_" controllers_file:="/home/ubuntu/ur_controllers_test.yaml"
 
-**Note**: the ``tf_prefix`` argument is not available for ``ur_sim_moveit.launch.py``, since it would require a custom definition of the moveit config package for properly setting it up.   
+**Note**: the ``tf_prefix`` argument is not available for ``ur_sim_moveit.launch.py``, since it would require a custom definition of the moveit config package for properly setting it up.
 
-The last customization option allows to instatiate the robot in a proper setup instead of an empty world, like the given launch files do by default. The first step to create a complete simulation is to define a world file (.sdf): for this example we can create a simple custom world ``test_world.sdf`` and place it in ``ur_gz_simulation/worlds``. For more details about building worlds in Gazebo, it's possible to check the `related tutorial <https://gazebosim.org/docs/harmonic/sdf_worlds>`_.
+The last customization option allows to instantiate the robot in a proper setup instead of an empty world, like the given launch files do by default. The first step to create a complete simulation is to define a world file (.sdf): for this example we can create a simple custom world ``test_world.sdf`` and place it in ``ur_gz_simulation/worlds``. For more details about building worlds in Gazebo, it's possible to check the `related tutorial <https://gazebosim.org/docs/harmonic/sdf_worlds>`_.
 To use the new world changes are minimimal:
 
 - in ``ur_sim_control.launch.py`` we can add the path to the ``launch_setup`` as
@@ -202,10 +202,10 @@ To use the new world changes are minimimal:
         [FindPackageShare("ur_simulation_gz"), "worlds", "test_world.sdf"]
     )
 
-- and then modify the ``gz_launch_description`` in order to use the desired world file: 
+- and then modify the ``gz_launch_description`` in order to use the desired world file:
 
 .. code-block:: python
-    
+
    gz_launch_description = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
