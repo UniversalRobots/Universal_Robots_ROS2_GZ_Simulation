@@ -58,7 +58,7 @@ def launch_setup(context, *args, **kwargs):
             "runtime_config_package": runtime_config_package,
             "controllers_file": controllers_file,
             "description_file": description_file,
-            "prefix": prefix,
+            "tf_prefix": prefix,
             "launch_rviz": "false",
         }.items(),
     )
