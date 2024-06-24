@@ -45,7 +45,6 @@ from launch.substitutions import PathJoinSubstitution
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.substitutions import FindPackageShare
 from launch_testing.actions import ReadyToTest
-import launch_testing
 
 from builtin_interfaces.msg import Duration
 from control_msgs.action import FollowJointTrajectory
@@ -71,12 +70,14 @@ ROBOT_JOINTS = [
 
 
 # TODO: Add tf_prefix parametrization
+# TODO: Currently, launching multiple simulations from this makes the old simulation not stop. This
+# might change, once the gz launch system migration is done using gzserver and such....
+# @launch_testing.parametrize(
+# "ur_type",
+# ["ur3", "ur3e", "ur5", "ur5e", "ur10", "ur10e", "ur16e", "ur20", "ur30"],
+# )
 @pytest.mark.launch_test
-@launch_testing.parametrize(
-    "ur_type",
-    ["ur3", "ur3e", "ur5", "ur5e", "ur10", "ur10e", "ur16e", "ur20", "ur30"],
-)
-def generate_test_description(ur_type):
+def generate_test_description():
     simulator = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution(
@@ -84,11 +85,10 @@ def generate_test_description(ur_type):
             )
         ),
         launch_arguments={
-            "ur_type": ur_type,
-            "launch_rviz": "true",
+            "ur_type": "ur5e",
+            "launch_rviz": "false",
             "gazebo_gui": "false",
             "start_joint_controller": "true",
-            # "gz_gui": "false",
         }.items(),
     )
     return LaunchDescription([ReadyToTest(), simulator])
@@ -118,7 +118,7 @@ class GazeboTest(unittest.TestCase):
         # TODO: Replace this timeout with a proper check whether the robot is initialized
         time.sleep(5)
 
-    def test_trajectory(self, ur_type):
+    def test_trajectory(self):
         """Test robot movement."""
         # Construct test trajectory
         test_trajectory = [
