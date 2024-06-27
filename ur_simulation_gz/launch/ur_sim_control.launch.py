@@ -64,6 +64,7 @@ def launch_setup(context, *args, **kwargs):
     launch_rviz = LaunchConfiguration("launch_rviz")
     rviz_config_file = LaunchConfiguration("rviz_config_file")
     gazebo_gui = LaunchConfiguration("gazebo_gui")
+    world_file = LaunchConfiguration("world_file")
 
     robot_description_content = Command(
         [
@@ -161,7 +162,9 @@ def launch_setup(context, *args, **kwargs):
         ),
         launch_arguments={
             "gz_args": IfElseSubstitution(
-                gazebo_gui, if_value=" -r -v 4 empty.sdf", else_value=" -s -r -v 4 empty.sdf"
+                gazebo_gui,
+                if_value=[" -r -v 4 ", world_file],
+                else_value=[" -s -r -v 4 ", world_file],
             )
         }.items(),
     )
@@ -268,6 +271,13 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "gazebo_gui", default_value="true", description="Start gazebo with GUI?"
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "world_file",
+            default_value="empty.sdf",
+            description="Gazebo world file (absolute path) containing custom world.",
         )
     )
 
