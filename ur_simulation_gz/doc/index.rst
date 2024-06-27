@@ -34,7 +34,7 @@ If we also want to be able to use MoveIt!, then:
 
     $ ros2 launch ur_simulation_gz ur_sim_moveit.launch.py ur_type:=ur10e
 
-.. image:: images/gz_simulation_moveit.png
+.. image:: resources/gz_simulation_moveit.png
    :width: 95%
    :alt: Gazebo with MoveIt!
 
@@ -221,6 +221,6 @@ To use the new world changes are minimimal:
 
 With these changes, when launching the simulation with one of the commands shown before, Gazebo will use the indicated custom world instead of the default empty, like in the following picture.
 
-.. image:: images/gz_simulation_custom_world.png
+.. image:: resources/gz_simulation_custom_world.png
    :width: 95%
    :alt: Gazebo custom world
