@@ -38,7 +38,9 @@ If we also want to be able to use MoveIt!, then:
    :width: 95%
    :alt: Gazebo with MoveIt!
 
-**Note**: all the additional launch arguments are described in the launch files themselves.
+.. note::
+
+   All the additional launch arguments are described in the launch files themselves.
 
 Customization
 -------------
@@ -75,33 +77,21 @@ To load the newly defined file, it is possible to specify its absolute path with
 Custom World
 ^^^^^^^^^^^^
 
-The last customization option allows to instantiate the robot in a proper setup instead of an empty world, like the given launch files do by default. The first step to create a complete simulation is to define a world file (.sdf): for this example we can create a simple custom world ``test_world.sdf`` and place it in ``ur_gz_simulation/worlds``. For more details about building worlds in Gazebo, it's possible to check the `related tutorial <https://gazebosim.org/docs/harmonic/sdf_worlds>`_.
-To use the new world changes are minimimal:
+The last customization option allows to instantiate the robot in a proper setup instead of an empty world, like the given launch files do by default. The first step to create a complete simulation is to define a world file (.sdf): for this example we can use a simple custom world ``test_world.sdf``, located it in ``ur_gz_simulation/doc/resources``. For more details about building worlds in Gazebo, it's possible to check the `related tutorial <https://gazebosim.org/docs/harmonic/sdf_worlds>`_.
+To use the new world changes it's enough to specify its absolute path in the ``world_file`` argument:
 
-- in ``ur_sim_control.launch.py`` we can add the path to the ``launch_setup`` as
 
-.. code-block:: python
+.. code-block:: console
 
-    world_file_path = PathJoinSubstitution(
-        [FindPackageShare("ur_simulation_gz"), "worlds", "test_world.sdf"]
-    )
+   $ ros2 launch ur_simulation_gz ur_sim_control.launch.py ur_type:=ur10e world_file:=<path_to_gz_simulation>/doc/resources/test_world.sdf
 
-- and then modify the ``gz_launch_description`` in order to use the desired world file:
+or using MoveIt!
 
-.. code-block:: python
+.. code-block:: console
 
-   gz_launch_description = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
-        ),
-        launch_arguments={
-            "gz_args": IfElseSubstitution(
-                gazebo_gui, if_value=[" -r -v 4 ", world_file_path], else_value=[" -s -r -v 4 ", world_file_path]
-            )
-        }.items(),
-    )
+   $ ros2 launch ur_simulation_gz ur_sim_moveit.launch.py ur_type:=ur10e world_file:=<path_to_gz_simulation>/doc/resources/test_world.sdf
 
-With these changes, when launching the simulation with one of the commands shown before, Gazebo will use the indicated custom world instead of the default empty, like in the following picture.
+In this way, when launching the simulation, Gazebo will use the indicated custom world instead of the default empty, like in the following picture.
 
 .. image:: resources/gz_simulation_custom_world.png
    :width: 95%
