@@ -68,7 +68,7 @@ To load the newly defined file, it is possible to specify its absolute path with
 
    $ ros2 launch ur_simulation_gz ur_sim_control.launch.py ur_type:=ur10e tf_prefix:="alice_" controllers_file:="/home/ubuntu/ur_controllers_test.yaml"
 
-.. note:: 
+.. note::
 
    The ``tf_prefix`` argument is not available for ``ur_sim_moveit.launch.py``, since it would require a custom definition of the moveit config package for properly setting it up.
 
