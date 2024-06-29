@@ -277,7 +277,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "world_file",
             default_value="empty.sdf",
-            description="Gazebo world file (absolute path) containing custom world.",
+            description="Gazebo world file (absolute path or filename from the gazebosim worlds collection) containing a custom world.",
         )
     )
 
