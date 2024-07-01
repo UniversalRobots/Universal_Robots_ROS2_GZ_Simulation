@@ -14,13 +14,13 @@ Setup ROS2 Workspace
    $ mkdir -p $COLCON_WS/src
 
 .. note::
-   Feel free to change `~/workspaces/ur_gz` to whatever absolute path you want.
+   Feel free to change ``~/workspaces/ur_gz`` to whatever absolute path you want.
 
 .. note::
 
    Over time you will probably have multiple ROS workspaces, so it makes sense to them all in a subfolder.
 
-   Also, it is good practice to put the ROS version in the name of the workspace, for different tests you could just add a suffix to the base name `ur_gz`.
+   Also, it is good practice to put the ROS version in the name of the workspace, for different tests you could just add a suffix to the base name ``ur_gz``.
 
 2. Download the required repositories and install package dependencies:
 
