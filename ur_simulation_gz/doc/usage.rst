@@ -17,11 +17,11 @@ So, if only Gazebo and Rviz are needed:
 
    $ ros2 launch ur_simulation_gz ur_sim_control.launch.py ur_type:=ur10e
 
-Which can be tested by using a test script from ``ur_robot_driver``, in a new terminal:
+Which can be tested by using a test script from ``ur_robot_driver`` (if installed), in a new terminal:
 
 .. code-block:: console
 
-   $ ros2 launch ur_simulation_gz ur_sim_control.launch.py 
+   $ ros2 launch ur_robot_driver test_joint_trajectory_controller.launch.py
 
 If we also want to be able to use MoveIt!, then:
 
@@ -45,7 +45,7 @@ Beyond the default usage, the package offers some customization options.
 Custom Description
 ^^^^^^^^^^^^^^^^^^
 
-The first option is easily achievable by using the launch argument ``description_file``,  which allows to pass the absolute path of a custom description to both launchers. Together with it, it could be useful to choose a custom Rviz configuration file and the launch argument ``rviz_config_file`` can be passed for that. An example of their usage:
+To use a custom robot / scene description, the launch argument ``description_file`` can be specified,  which allows to pass the absolute path of a custom description to both launchers. Together with it, it could be useful to choose a custom Rviz configuration file and the launch argument ``rviz_config_file`` can be passed for that. An example of their usage:
 
 .. code-block:: console
 
@@ -54,10 +54,11 @@ The first option is easily achievable by using the launch argument ``description
 tf_prefix
 ^^^^^^^^^
 
-Also here, like in the driver package, it is possible to specify tf_prefix using the ``tf_prefix`` launch argument, but for this package this is not the only step required. Since controllers loading is handled differently, it is necessary to define a custom controllers file with the desired tf_prefix. Assuming ``tf_prefix:="alice_"``, an example of such file could be:
+Also here, like in the driver package, it is possible to specify a tf_prefix using the ``tf_prefix`` launch argument, but for this package this is not the only step required. Since controller loading is handled differently, it is necessary to define a custom controllers file with the desired tf_prefix. Assuming ``tf_prefix:="alice_"``, an example of such file could be:
 
 .. literalinclude:: resources/ur_controllers_test.yaml
-    :emphasize-lines: 52-57, 80-85, 107-112, 118-123
+   :language: yaml
+   :emphasize-lines: 52-57, 80-85, 107-112, 118-123
 
 To load the newly defined file, it is possible to specify its absolute path with the ``controllers_file`` argument. Together with it the desired prefix should be also be specified as argument, like in the following example:
 
