@@ -58,7 +58,7 @@ Also here, like in the driver package, it is possible to specify a tf_prefix usi
 
 .. literalinclude:: resources/ur_controllers_test.yaml
    :language: yaml
-   :emphasize-lines: 52-57, 80-85, 107-112, 118-123
+   :emphasize-lines: 15-20, 32-37
 
 To load the newly defined file, it is possible to specify its absolute path with the ``controllers_file`` argument. Together with it the desired prefix should be also be specified as argument, like in the following example:
 

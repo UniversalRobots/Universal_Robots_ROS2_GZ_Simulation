@@ -19,7 +19,7 @@ Setup ROS2 Workspace
 .. note::
 
    Over time you will probably have multiple ROS workspaces, so it makes sense to them all in a subfolder.
-     
+
    Also, it is good practice to put the ROS version in the name of the workspace, for different tests you could just add a suffix to the base name `ur_gz`.
 
 2. Download the required repositories and install package dependencies:
