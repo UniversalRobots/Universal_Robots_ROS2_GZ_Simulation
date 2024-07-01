@@ -28,6 +28,7 @@ Setup ROS2 Workspace
 
     $ cd $COLCON_WS
     $ git clone -b ros2 https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation.git src/ur_simulation_gz
+    $ vcs import --input src/ur_simulation_gz/ur_simulation_gz-not-released.rolling.repos src # only required for rolling
     $ rosdep update && rosdep install --ignore-src --from-paths src -y
 
 Configure and build Workspace
@@ -37,6 +38,7 @@ To configure and build the workspace execute following commands:
 
 .. code-block:: console
 
+   $ source /opt/ros/rolling/setup.bash # necessary after installing gz-sim-vendor
    $ cd $COLCON_WS
    $ colcon build --symlink-install
 
