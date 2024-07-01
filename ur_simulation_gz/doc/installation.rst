@@ -33,7 +33,7 @@ Setup ROS2 Workspace
 Configure and build Workspace
 -----------------------------
 
-To configure and build workspace execute following commands:
+To configure and build the workspace execute following commands:
 
 .. code-block:: console
 
