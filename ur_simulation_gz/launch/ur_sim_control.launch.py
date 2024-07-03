@@ -38,7 +38,13 @@ from launch.actions import (
 from launch.conditions import IfCondition, UnlessCondition
 from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import (
+    Command,
+    FindExecutable,
+    LaunchConfiguration,
+    PathJoinSubstitution,
+    IfElseSubstitution,
+)
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
@@ -58,6 +64,7 @@ def launch_setup(context, *args, **kwargs):
     start_joint_controller = LaunchConfiguration("start_joint_controller")
     initial_joint_controller = LaunchConfiguration("initial_joint_controller")
     launch_rviz = LaunchConfiguration("launch_rviz")
+    gazebo_gui = LaunchConfiguration("gazebo_gui")
     world_file = LaunchConfiguration("world_file")
 
     initial_joint_controllers = PathJoinSubstitution(
@@ -166,7 +173,13 @@ def launch_setup(context, *args, **kwargs):
         PythonLaunchDescriptionSource(
             [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
         ),
-        launch_arguments={"gz_args": [" -r -v 4 ", world_file]}.items(),
+        launch_arguments={
+            "gz_args": IfElseSubstitution(
+                gazebo_gui,
+                if_value=[" -r -v 4 ", world_file],
+                else_value=[" -s -r -v 4 ", world_file],
+            )
+        }.items(),
     )
 
     nodes_to_start = [
@@ -273,9 +286,15 @@ def generate_launch_description():
     )
     declared_arguments.append(
         DeclareLaunchArgument(
+            "gazebo_gui", default_value="true", description="Start gazebo with GUI?"
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
             "world_file",
             default_value="empty.sdf",
             description="Gazebo world file (absolute path or filename from the gazebosim worlds collection) containing a custom world.",
         )
     )
+
     return LaunchDescription(declared_arguments + [OpaqueFunction(function=launch_setup)])
