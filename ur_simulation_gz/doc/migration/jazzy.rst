@@ -4,7 +4,7 @@ ur_simulation_gz
 Updated argument name for tf_prefix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To have coherency between the driver and the GZ simulation, the launch argument to use tf_prefix has been changed from ``prefix`` to ``tf_prefix``. Moreover, differently from the driver, using such argument for this package requires the user to also provide their own controllers file, as explained in REF.
+To have coherency between the driver and the GZ simulation, the launch argument to use tf_prefix has been changed from ``prefix`` to ``tf_prefix``. Moreover, differently from the driver, using such argument for this package requires the user to also provide their own controllers file, as explained in :ref:`tf_prefix for GZ <tf_prefix_gz>`.
 
 Update arguments for MoveIt!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
