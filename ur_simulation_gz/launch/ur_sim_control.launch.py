@@ -43,7 +43,6 @@ from launch.substitutions import (
     FindExecutable,
     LaunchConfiguration,
     PathJoinSubstitution,
-    IfElseSubstitution,
 )
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
@@ -168,18 +167,24 @@ def launch_setup(context, *args, **kwargs):
             "true",
         ],
     )
-
-    gz_launch_description = IncludeLaunchDescription(
+    gz_launch_description_with_gui = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
         ),
         launch_arguments={
-            "gz_args": IfElseSubstitution(
-                gazebo_gui,
-                if_value=[" -r -v 4 ", world_file],
-                else_value=[" -s -r -v 4 ", world_file],
-            )
+            "gz_args": ["-r", "-v", "4", world_file]
         }.items(),
+        condition=IfCondition(gazebo_gui)
+    )
+
+    gz_launch_description_without_gui = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
+        ),
+        launch_arguments={
+            "gz_args": ["-s", "-r", "-v", "4", world_file]
+        }.items(),
+        condition=UnlessCondition(gazebo_gui)
     )
 
     nodes_to_start = [
@@ -189,7 +194,8 @@ def launch_setup(context, *args, **kwargs):
         initial_joint_controller_spawner_stopped,
         initial_joint_controller_spawner_started,
         gz_spawn_entity,
-        gz_launch_description,
+        gz_launch_description_with_gui,
+        gz_launch_description_without_gui,
     ]
 
     return nodes_to_start
