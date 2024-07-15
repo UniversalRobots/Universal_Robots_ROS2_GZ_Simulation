@@ -51,6 +51,8 @@ To use a custom robot / scene description, the launch argument ``description_fil
 
    $ ros2 launch ur_simulation_gz ur_sim_control.launch.py ur_type:=ur10e description_file:="/home/ubuntu/ur_gz_test.urdf.xacro" rviz_config_file:="/home/ubuntu/rviz_test.rviz"
 
+.. _tf_prefix_gz:
+
 tf_prefix
 ^^^^^^^^^
 
