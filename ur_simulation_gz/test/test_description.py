@@ -72,7 +72,7 @@ def test_ur_urdf_xacro(ur_type, prefix):
     )
 
     description_file_path = os.path.join(
-        get_package_share_directory("ur_simulation_gz"), "urdf", "ur_gz.urdf.xacro"
+        get_package_share_directory("ur_description"), "urdf", "ur.urdf.xacro"
     )
 
     (_, tmp_urdf_output_file) = tempfile.mkstemp(suffix=".urdf")
