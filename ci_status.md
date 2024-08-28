@@ -13,8 +13,8 @@ upstream changes some pipelines might turn red temporarily which can be expected
   </tr>
   <tr>
     <th>Branch</th>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">humble</a></td>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">iron</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/humble">humble</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/iron">iron</a></td>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">ros2</a></td>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">ros2</a></td>
   </tr>
@@ -29,12 +29,12 @@ upstream changes some pipelines might turn red temporarily which can be expected
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/humble-binary-testing.yml/badge.svg?event=schedule"
               alt="Humble Binary Testing"/>
       </a> <br />
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/humble-semi-binary-main.yml?query=branch%3Amain+">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/humble-semi-binary-main.yml/badge.svg?branch=main"
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/humble-semi-binary-main.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/humble-semi-binary-main.yml/badge.svg?event=schedule"
               alt="Humble Semi-Binary Main"/>
       </a> <br />
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/humble-semi-binary-testing.yml?query=branch%3Amain+">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/humble-semi-binary-testing.yml/badge.svg?branch=main"
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/humble-semi-binary-testing.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/humble-semi-binary-testing.yml/badge.svg?event=schedule"
               alt="Humble Semi-Binary Testing"/>
       </a>
     </td>
@@ -47,12 +47,12 @@ upstream changes some pipelines might turn red temporarily which can be expected
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/iron-binary-testing.yml/badge.svg?event=schedule"
               alt="Iron Binary Testing"/>
       </a> <br />
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/iron-semi-binary-main.yml?query=branch%3Amain+">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/iron-semi-binary-main.yml/badge.svg?branch=main"
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/iron-semi-binary-main.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/iron-semi-binary-main.yml/badge.svg?event=schedule"
               alt="Iron Semi-Binary Main"/>
       </a> <br />
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/iron-semi-binary-testing.yml?query=branch%3Amain+">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/iron-semi-binary-testing.yml/badge.svg?branch=main"
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/iron-semi-binary-testing.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/iron-semi-binary-testing.yml/badge.svg?event=schedule"
               alt="Iron Semi-Binary Testing"/>
       </a>
     </td>
@@ -65,12 +65,12 @@ upstream changes some pipelines might turn red temporarily which can be expected
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-binary-testing.yml/badge.svg?event=schedule"
               alt="Jazzy Binary Testing"/>
       </a> <br />
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-semi-binary-main.yml?query=branch%3Amain+">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-semi-binary-main.yml/badge.svg?branch=main"
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-semi-binary-main.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-semi-binary-main.yml/badge.svg?event=schedule"
               alt="Jazzy Semi-Binary Main"/>
       </a> <br />
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-semi-binary-testing.yml?query=branch%3Amain+">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-semi-binary-testing.yml/badge.svg?branch=main"
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-semi-binary-testing.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-semi-binary-testing.yml/badge.svg?event=schedule"
               alt="Jazzy Semi-Binary Testing"/>
       </a>
     </td>
@@ -83,12 +83,12 @@ upstream changes some pipelines might turn red temporarily which can be expected
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-binary-testing.yml/badge.svg?event=schedule"
               alt="Rolling Binary Testing"/>
       </a> <br />
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-semi-binary-main.yml?query=branch%3Amain+">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-semi-binary-main.yml/badge.svg?branch=main"
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-semi-binary-main.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-semi-binary-main.yml/badge.svg?event=schedule"
               alt="Rolling Semi-Binary Main"/>
       </a> <br />
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-semi-binary-testing.yml?query=branch%3Amain+">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-semi-binary-testing.yml/badge.svg?branch=main"
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-semi-binary-testing.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-semi-binary-testing.yml/badge.svg?event=schedule"
               alt="Rolling Semi-Binary Testing"/>
       </a>
     </td>
