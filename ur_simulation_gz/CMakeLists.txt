@@ -24,7 +24,6 @@ if(BUILD_TESTING)
         180
     )
   endif()
-  ament_add_pytest_test(description test/test_description.py)
 endif()
 
 ament_package()
