@@ -2,7 +2,7 @@ repositories:
   gz_ros2_control:
     type: git
     url: https://github.com/ros-controls/gz_ros2_control.git
-    version: master
+    version: rolling
   moveit2:
     type: git
     url: https://github.com/ros-planning/moveit2.git
