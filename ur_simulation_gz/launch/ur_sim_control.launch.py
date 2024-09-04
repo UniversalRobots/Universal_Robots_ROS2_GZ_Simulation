@@ -171,20 +171,16 @@ def launch_setup(context, *args, **kwargs):
         PythonLaunchDescriptionSource(
             [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
         ),
-        launch_arguments={
-            "gz_args": ["-r", "-v", "4", world_file]
-        }.items(),
-        condition=IfCondition(gazebo_gui)
+        launch_arguments={"gz_args": ["-r", "-v", "4", world_file]}.items(),
+        condition=IfCondition(gazebo_gui),
     )
 
     gz_launch_description_without_gui = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [FindPackageShare("ros_gz_sim"), "/launch/gz_sim.launch.py"]
         ),
-        launch_arguments={
-            "gz_args": ["-s", "-r", "-v", "4", world_file]
-        }.items(),
-        condition=UnlessCondition(gazebo_gui)
+        launch_arguments={"gz_args": ["-s", "-r", "-v", "4", world_file]}.items(),
+        condition=UnlessCondition(gazebo_gui),
     )
 
     nodes_to_start = [
