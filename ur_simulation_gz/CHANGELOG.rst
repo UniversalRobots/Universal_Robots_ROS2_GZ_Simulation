@@ -2,7 +2,7 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.0.1 (2024-09-05)
+2.0.0 (2024-09-05)
 ------------------
 * Integration tests (`#17 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/17>`_)
 * GZ Migration Notes (`#42 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/42>`_)
