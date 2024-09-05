@@ -2,8 +2,8 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.0 (2024-09-05)
+------------------
 * Integration tests on Humble (backport of `#17 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/17>`_)
 * Update ci_status page with correct link and badges for semi-binary builds (backport `#46 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/46>`_)
 * Replace IfElseSubstitution with IfCondition UnlessCondition (`#44 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/44>`_)
