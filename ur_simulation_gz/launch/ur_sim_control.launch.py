@@ -182,6 +182,16 @@ def launch_setup(context, *args, **kwargs):
         }.items(),
     )
 
+    # Make the /clock topic available in ROS
+    gz_sim_bridge = Node(
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        arguments=[
+            "/clock@rosgraph_msgs/msg/Clock[ignition.msgs.Clock",
+        ],
+        output="screen",
+    )
+
     nodes_to_start = [
         robot_state_publisher_node,
         joint_state_broadcaster_spawner,
@@ -190,6 +200,7 @@ def launch_setup(context, *args, **kwargs):
         initial_joint_controller_spawner_started,
         gz_spawn_entity,
         gz_launch_description,
+        gz_sim_bridge,
     ]
 
     return nodes_to_start
