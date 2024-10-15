@@ -11,6 +11,10 @@ repositories:
     type: git
     url: https://github.com/ros-planning/moveit_msgs.git
     version: ros2
+  srdfdom:
+    type: git
+    url: https://github.com/moveit/srdfdom.git
+    version: ros2
   ros2_control:
     type: git
     url: https://github.com/ros-controls/ros2_control.git
@@ -27,3 +31,7 @@ repositories:
     type: git
     url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git
     version: rolling
+  Universal_Robots_ROS2_Driver:
+    type: git
+    url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver.git
+    version: main
