@@ -112,7 +112,7 @@ class GazeboTest(unittest.TestCase):
     def init_robot(self):
         self._follow_joint_trajectory = ActionInterface(
             self.node,
-            "/joint_trajectory_controller/follow_joint_trajectory",
+            "/scaled_joint_trajectory_controller/follow_joint_trajectory",
             FollowJointTrajectory,
         )
         # TODO: Replace this timeout with a proper check whether the robot is initialized
