@@ -21,7 +21,7 @@ Which can be tested by using a test script from ``ur_robot_driver`` (if installe
 
 .. code-block:: console
 
-   $ ros2 launch ur_robot_driver test_joint_trajectory_controller.launch.py
+   $ ros2 run ur_robot_driver example_move.py
 
 If we also want to be able to use MoveIt!, then:
 
