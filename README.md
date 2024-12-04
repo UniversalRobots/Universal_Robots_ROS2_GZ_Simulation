@@ -98,7 +98,7 @@ ros2 launch ur_simulation_gz ur_sim_control.launch.py
 
 Move robot using test script from  `ur_robot_driver` package (if you've installed that one):
 ```
-ros2 launch ur_robot_driver test_joint_trajectory_controller.launch.py
+ros2 run ur_robot_driver example_move.py
 ```
 
 Example using MoveIt with simulated robot:
