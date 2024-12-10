@@ -2,6 +2,13 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.0 (2024-12-10)
+-----------
+* Update README.md with correct example script (`#67 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/67>`_)
+* Use sjtc and generate /clock topic (`#58 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/58>`_)
+* Add a ground plane to the gz URDF (`#61 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/61>`_)
+* Contributors: Felix Exner
+
 2.0.0 (2024-09-05)
 ------------------
 * Integration tests (`#17 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/17>`_)
