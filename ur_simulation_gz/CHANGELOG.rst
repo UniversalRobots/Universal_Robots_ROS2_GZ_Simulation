@@ -2,8 +2,8 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.0 (2024-12-11)
+------------------
 * Start gz bridge for clock topic (`#60 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/60>`_)
 * Contributors: Felix Exner (fexner)
 
