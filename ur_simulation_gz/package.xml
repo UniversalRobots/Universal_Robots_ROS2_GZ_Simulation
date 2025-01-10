@@ -2,13 +2,16 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>ur_simulation_gz</name>
-  <version>0.0.2</version>
+  <version>0.1.0</version>
   <description>Example and configuration files for Gazebo simulation of UR manipulators.</description>
 
   <author>Lovro Ivanov</author>
   <author email="denis@stoglrobotics.de">Denis Stogl</author>
+  <author email="dipentima@fzi.de">Vincenzo Di Pentima</author>
 
-  <maintainer email="exner@fzi.de">Felix Exner</maintainer>
+  <maintainer email="feex@universal-robots.com">Felix Exner</maintainer>
+  <maintainer email="rsk@universal-robots.com">Rune Søe-Knudsen</maintainer>
+  <maintainer email="ros@universal-robots.com">Universal Robots A/S</maintainer>
 
   <license>BSD-3-Clause</license>
 
