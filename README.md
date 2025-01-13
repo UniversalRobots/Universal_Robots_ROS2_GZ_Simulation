@@ -8,32 +8,32 @@ Example files and configurations for Gazebo simulation of Universal Robots' mani
   <tr>
     <th></th>
     <th>Humble</th>
-    <th>Iron</th>
+    <th>Jazzy</th>
     <th>Rolling</th>
   </tr>
   <tr>
     <th>Branch</th>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/humble">humble</a></td>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/iron">iron</a></td>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/ros2">ros2</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/humble">humble</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">ros2</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">ros2</a></td>
   </tr>
   <tr>
     <th>Build status</th>
     <td>
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Ignition_Simulation/actions/workflows/humble-binary-main.yml?query=event%3Aschedule++">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Ignition_Simulation/actions/workflows/humble-binary-main.yml/badge.svg?event=schedule"
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/humble-binary-main.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/humble-binary-main.yml/badge.svg?event=schedule"
               alt="Humble Binary Main"/>
       </a> <br />
     </td>
     <td>
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Ignition_Simulation/actions/workflows/iron-binary-main.yml?query=event%3Aschedule++">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Ignition_Simulation/actions/workflows/iron-binary-main.yml/badge.svg?event=schedule"
-              alt="Iron Binary Main"/>
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-binary-main.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-binary-main.yml/badge.svg?event=schedule"
+              alt="Jazzy Binary Main"/>
       </a> <br />
     </td>
     <td>
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Ignition_Simulation/actions/workflows/rolling-binary-main.yml?query=event%3Aschedule++">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Ignition_Simulation/actions/workflows/rolling-binary-main.yml/badge.svg?event=schedule"
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-binary-main.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-binary-main.yml/badge.svg?event=schedule"
               alt="Rolling Binary Main"/>
       </a> <br />
     </td>
@@ -64,7 +64,7 @@ Skip any of below steps is not applicable.
 1. Download the required repositories and install package dependencies:
    ```
    cd $COLCON_WS
-   git clone -b humble https://github.com/UniversalRobots/Universal_Robots_ROS2_Ignition_Simulation.git src/ur_simulation_gz
+   git clone -b ros2 https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation.git src/ur_simulation_gz
    rosdep update && rosdep install --ignore-src --from-paths src -y
    ```
 
@@ -90,7 +90,7 @@ ros2 launch ur_simulation_gz ur_sim_control.launch.py
 
 Move robot using test script from  `ur_robot_driver` package (if you've installed that one):
 ```
-ros2 launch ur_robot_driver test_joint_trajectory_controller.launch.py
+ros2 run ur_robot_driver example_move.py
 ```
 
 Example using MoveIt with simulated robot:
