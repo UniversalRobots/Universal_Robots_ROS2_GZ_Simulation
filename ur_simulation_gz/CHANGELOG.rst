@@ -2,6 +2,13 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Allow using the scaled jtc with GZ Sim (`#82 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/82>`_)
+* Reverted string format of gz_args (`#77 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/77>`_)
+* Update package maintainers (backport of `#74 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/74>`_)
+* Contributors: Felix Exner, LJ Azzalini, mergify[bot]
+
 0.1.0 (2024-12-11)
 ------------------
 * Start gz bridge for clock topic (`#60 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/60>`_)
