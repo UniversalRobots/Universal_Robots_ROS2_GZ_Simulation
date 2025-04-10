@@ -2,8 +2,8 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.0 (2025-04-10)
+------------------
 * Add support for UR7e and UR12e (backport `#86 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/86>`_) (`#87 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/87>`_)
 * Contributors: mergify[bot]
 
