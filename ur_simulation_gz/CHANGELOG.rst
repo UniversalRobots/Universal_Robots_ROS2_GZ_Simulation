@@ -2,6 +2,11 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add support for UR7e and UR12e (backport `#86 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/86>`_) (`#87 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/87>`_)
+* Contributors: mergify[bot]
+
 0.1.1 (2025-01-24)
 ------------------
 * Allow using the scaled jtc with GZ Sim (`#82 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/82>`_)
