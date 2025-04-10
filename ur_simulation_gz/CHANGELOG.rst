@@ -2,6 +2,14 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add support for UR7e and UR12e (`#86 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/86>`_)
+* Allow ros namespace to be specified (`#85 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/85>`_)
+* Update package maintainers (`#74 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/74>`_)
+  This commit updates the package maintainers as the project's governance has changed a bit.
+* Contributors: Felix Exner, Kenji Brameld (TRACLabs)
+
 2.1.0 (2024-12-10)
 ------------------
 * Update README.md with correct example script (`#67 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/67>`_)
