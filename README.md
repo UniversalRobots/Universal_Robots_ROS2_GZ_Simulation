@@ -9,11 +9,13 @@ Example files and configurations for Gazebo simulation of Universal Robots' mani
     <th></th>
     <th>Humble</th>
     <th>Jazzy</th>
+    <th>Kilted</th>
     <th>Rolling</th>
   </tr>
   <tr>
     <th>Branch</th>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/humble">humble</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">ros2</a></td>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">ros2</a></td>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">ros2</a></td>
   </tr>
@@ -29,6 +31,12 @@ Example files and configurations for Gazebo simulation of Universal Robots' mani
       <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-binary-main.yml?query=event%3Aschedule++">
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-binary-main.yml/badge.svg?event=schedule"
               alt="Jazzy Binary Main"/>
+      </a> <br />
+    </td>
+    <td> <!-- Kilted -->
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/kilted-binary-main.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/kilted-binary-main.yml/badge.svg?event=schedule"
+              alt="Kilted Binary Main"/>
       </a> <br />
     </td>
     <td>

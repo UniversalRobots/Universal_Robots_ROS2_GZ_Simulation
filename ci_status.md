@@ -8,6 +8,7 @@ upstream changes some pipelines might turn red temporarily which can be expected
     <th></th>
     <th>Humble</th>
     <th>Jazzy</th>
+    <th>Kilted</th>
     <th>Rolling</th>
   </tr>
   <tr>
@@ -52,6 +53,24 @@ upstream changes some pipelines might turn red temporarily which can be expected
       <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-semi-binary-testing.yml?query=event%3Aschedule++">
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-semi-binary-testing.yml/badge.svg?event=schedule"
               alt="Jazzy Semi-Binary Testing"/>
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/kilted-binary-main.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/kilted-binary-main.yml/badge.svg?event=schedule"
+              alt="Kilted Binary Main"/>
+      </a> <br />
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/kilted-binary-testing.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/kilted-binary-testing.yml/badge.svg?event=schedule"
+              alt="Kilted Binary Testing"/>
+      </a> <br />
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/kilted-semi-binary-main.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/kilted-semi-binary-main.yml/badge.svg?event=schedule"
+              alt="Kilted Semi-Binary Main"/>
+      </a> <br />
+      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/kilted-semi-binary-testing.yml?query=event%3Aschedule++">
+         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/kilted-semi-binary-testing.yml/badge.svg?event=schedule"
+              alt="Kilted Semi-Binary Testing"/>
       </a>
     </td>
     <td>
