@@ -1,8 +1,6 @@
 name: Jazzy Semi Binary Testing
 on:
   workflow_dispatch:
-    branches:
-      - ros2
   pull_request:
     branches:
       - ros2
@@ -13,7 +11,7 @@ on:
     - cron: '13 4 * * *'
 
 jobs:
-  binary:
+  jazzy_semi_binary_testing:
     uses: ./.github/workflows/reusable_ici.yml
     with:
       ros_distro: jazzy
