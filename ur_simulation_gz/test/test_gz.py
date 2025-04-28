@@ -74,7 +74,7 @@ ROBOT_JOINTS = [
 # might change, once the gz launch system migration is done using gzserver and such....
 # @launch_testing.parametrize(
 # "ur_type",
-# ["ur3", "ur3e", "ur5", "ur5e", "ur7e", "ur10", "ur10e", "ur12e", "ur16e", "ur20", "ur30"],
+# ["ur3", "ur3e", "ur5", "ur5e", "ur7e", "ur10", "ur10e", "ur12e", "ur16e", "ur15", "ur20", "ur30"],
 # )
 @pytest.mark.launch_test
 def generate_test_description():
