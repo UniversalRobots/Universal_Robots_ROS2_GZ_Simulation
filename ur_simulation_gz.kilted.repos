@@ -1,0 +1,37 @@
+repositories:
+  gz_ros2_control:
+    type: git
+    url: https://github.com/ros-controls/gz_ros2_control.git
+    version: kilted
+  moveit2:
+    type: git
+    url: https://github.com/ros-planning/moveit2.git
+    version: main
+  moveit_msgs:
+    type: git
+    url: https://github.com/ros-planning/moveit_msgs.git
+    version: ros2
+  srdfdom:
+    type: git
+    url: https://github.com/moveit/srdfdom.git
+    version: ros2
+  ros2_control:
+    type: git
+    url: https://github.com/ros-controls/ros2_control.git
+    version: master
+  ros2_control_demos:
+    type: git
+    url: https://github.com/ros-controls/ros2_control_demos.git
+    version: master
+  ros2_controllers:
+    type: git
+    url: https://github.com/ros-controls/ros2_controllers.git
+    version: master
+  Universal_Robots_ROS2_Description:
+    type: git
+    url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git
+    version: rolling
+  Universal_Robots_ROS2_Driver:
+    type: git
+    url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver.git
+    version: main
