@@ -2,8 +2,8 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.0 (2025-05-21)
+------------------
 * Add support for UR15 (`#102 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/102>`_)
 * Remove FTS broadcaster from list of controllers (backport of `#95 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/95>`_) (`#96 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/96>`_)
 * Contributors: mergify[bot]
