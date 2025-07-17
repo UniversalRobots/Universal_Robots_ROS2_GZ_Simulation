@@ -1,5 +1,7 @@
 :github_url: https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/blob/ros2/ur_simulation_gz/doc/usage.rst
 
+.. _ur_simulation_gz_usage:
+
 Usage
 =====
 
