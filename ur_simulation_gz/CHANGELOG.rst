@@ -2,6 +2,11 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add support for UR18 (backport `#118 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/118>`_) (`#119 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/119>`_)
+* Contributors: mergify[bot]
+
 0.4.0 (2025-09-18)
 ------------------
 * Add launch support for UR8 Long (backport `#111 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/111>`_) (`#114 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/114>`_)
