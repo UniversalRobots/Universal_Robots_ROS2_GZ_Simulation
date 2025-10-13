@@ -2,8 +2,8 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.0 (2025-10-13)
+------------------
 * Add support for UR18 (backport `#118 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/118>`_) (`#119 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/119>`_)
 * Contributors: mergify[bot]
 
