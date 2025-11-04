@@ -18,15 +18,11 @@ repositories:
   ros2_control:
     type: git
     url: https://github.com/ros-controls/ros2_control.git
-    version: master
-  ros2_control_demos:
-    type: git
-    url: https://github.com/ros-controls/ros2_control_demos.git
-    version: master
+    version: kilted
   ros2_controllers:
     type: git
     url: https://github.com/ros-controls/ros2_controllers.git
-    version: master
+    version: kilted
   Universal_Robots_ROS2_Description:
     type: git
     url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git
