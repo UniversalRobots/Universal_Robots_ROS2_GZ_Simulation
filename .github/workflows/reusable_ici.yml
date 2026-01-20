@@ -74,6 +74,7 @@ jobs:
       - uses: 'ros-industrial/industrial_ci@master'
         env:
           UPSTREAM_WORKSPACE: ${{ inputs.upstream_workspace }}
+          ADDITIONAL_DEBS: ros-${{ inputs.ros_distro }}-ros-core
           ROS_DISTRO: ${{ inputs.ros_distro }}
           ROS_REPO: ${{ inputs.ros_repo }}
           CMAKE_ARGS: -DUR_SIM_INTEGRATION_TESTS=ON
