@@ -43,6 +43,7 @@ def launch_setup(context, *args, **kwargs):
     controllers_file = LaunchConfiguration("controllers_file")
     description_file = LaunchConfiguration("description_file")
     moveit_launch_file = LaunchConfiguration("moveit_launch_file")
+    launch_servo = LaunchConfiguration("launch_servo")
 
     ur_control_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -65,6 +66,7 @@ def launch_setup(context, *args, **kwargs):
             "ur_type": ur_type,
             "use_sim_time": "true",
             "launch_rviz": "true",
+            "launch_servo": launch_servo,
         }.items(),
     )
 
@@ -117,6 +119,13 @@ def generate_launch_description():
                 [FindPackageShare("ur_simulation_gz"), "config", "ur_controllers.yaml"]
             ),
             description="Absolute path to YAML file with the controllers configuration.",
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "launch_servo",
+            default_value="false",
+            description="Launch the MoveIt servo.",
         )
     )
     declared_arguments.append(
