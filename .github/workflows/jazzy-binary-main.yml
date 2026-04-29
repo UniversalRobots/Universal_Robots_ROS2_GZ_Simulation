@@ -16,4 +16,4 @@ jobs:
     with:
       ros_distro: jazzy
       ros_repo: main
-      ref_for_scheduled_build: ros2
+      ref_for_scheduled_build: kilted

@@ -16,5 +16,5 @@ jobs:
     with:
       ros_distro: jazzy
       ros_repo: main
-      ref_for_scheduled_build: ros2
+      ref_for_scheduled_build: kilted
       upstream_workspace: ur_simulation_gz.jazzy.repos

@@ -16,4 +16,4 @@ jobs:
     with:
       ros_distro: kilted
       ros_repo: testing
-      ref_for_scheduled_build: ros2
+      ref_for_scheduled_build: kilted
