@@ -46,6 +46,7 @@ from launch.substitutions import (
     IfElseSubstitution,
 )
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -63,6 +64,7 @@ def launch_setup(context, *args, **kwargs):
     description_file = LaunchConfiguration("description_file")
     launch_rviz = LaunchConfiguration("launch_rviz")
     rviz_config_file = LaunchConfiguration("rviz_config_file")
+    z = LaunchConfiguration("z")
     gazebo_gui = LaunchConfiguration("gazebo_gui")
     world_file = LaunchConfiguration("world_file")
 
@@ -94,7 +96,9 @@ def launch_setup(context, *args, **kwargs):
             controllers_file,
         ]
     )
-    robot_description = {"robot_description": robot_description_content}
+    robot_description = {
+        "robot_description": ParameterValue(robot_description_content, value_type=str)
+    }
 
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
@@ -153,6 +157,8 @@ def launch_setup(context, *args, **kwargs):
             "ur",
             "-allow_renaming",
             "true",
+            "-z",
+            z,
         ],
     )
 
@@ -293,6 +299,9 @@ def generate_launch_description():
             ),
             description="Rviz config file (absolute path) to use when launching rviz.",
         )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument("z", default_value="0.0", description="Gazebo spawn Z coordinate.")
     )
     declared_arguments.append(
         DeclareLaunchArgument(
