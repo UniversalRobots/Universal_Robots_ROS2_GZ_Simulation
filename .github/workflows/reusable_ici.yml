@@ -40,7 +40,7 @@ on:
 
 jobs:
   reusable_ici:
-    name: ${{ inputs.ros_distro }} ${{ inputs.ros_repo }} ${{ inputs.os_code_name }}
+    name: ${{ inputs.ros_distro }} ${{ inputs.ros_repo }}
     runs-on: ubuntu-latest
     env:
       CCACHE_DIR: ${{ github.workspace }}/${{ inputs.ccache_dir }}
@@ -77,6 +77,7 @@ jobs:
           ROS_DISTRO: ${{ inputs.ros_distro }}
           ROS_REPO: ${{ inputs.ros_repo }}
           CMAKE_ARGS: -DUR_SIM_INTEGRATION_TESTS=ON
+          OS_CODE_NAME: ${{ inputs.ros_distro == 'rolling' && 'resolute' || '' }}
       - name: prepare target_ws for cache
         if: ${{ always() && ! matrix.env.CCOV }}
         run: |

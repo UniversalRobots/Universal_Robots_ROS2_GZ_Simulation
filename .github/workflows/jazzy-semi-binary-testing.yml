@@ -3,10 +3,10 @@ on:
   workflow_dispatch:
   pull_request:
     branches:
-      - ros2
+      - kilted
   push:
     branches:
-      - ros2
+      - kilted
   schedule:
     - cron: '13 4 * * *'
 

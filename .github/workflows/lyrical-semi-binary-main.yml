@@ -1,0 +1,20 @@
+name: Lyrical Semi Binary Main
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - ros2
+  push:
+    branches:
+      - ros2
+  schedule:
+    - cron: '13 4 * * *'
+
+jobs:
+  lyrical_semi_binary_main:
+    uses: ./.github/workflows/reusable_ici.yml
+    with:
+      ros_distro: lyrical
+      ros_repo: main
+      ref_for_scheduled_build: ros2
+      upstream_workspace: ur_simulation_gz.lyrical.repos
