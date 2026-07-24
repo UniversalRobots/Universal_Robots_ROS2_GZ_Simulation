@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.28)
 project(ur_simulation_gz)
 
 find_package(ament_cmake REQUIRED)
