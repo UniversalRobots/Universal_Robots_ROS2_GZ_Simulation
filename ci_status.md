@@ -15,15 +15,14 @@ upstream changes some pipelines might turn red temporarily which can be expected
   <tr>
     <th>Branch</th>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/humble">humble</a></td>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">kilted</a></td>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">kilted</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/jazzy">jazzy</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/jazzy">jazzy</a></td>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">ros2</a></td>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">ros2</a></td>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/tree/ros2">ros2</a></td>
   </tr>
   <tr>
     <th>Repo builds</th>
-    <!-- Humble -->
     <td>
       <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/humble-binary-main.yml?query=event%3Aschedule++">
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/humble-binary-main.yml/badge.svg?event=schedule"
@@ -42,7 +41,6 @@ upstream changes some pipelines might turn red temporarily which can be expected
               alt="Humble Semi-Binary Testing"/>
       </a>
     </td>
-    <!-- Jazzy -->
     <td>
       <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-binary-main.yml?query=event%3Aschedule++">
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/jazzy-binary-main.yml/badge.svg?event=schedule"
@@ -61,7 +59,6 @@ upstream changes some pipelines might turn red temporarily which can be expected
               alt="Jazzy Semi-Binary Testing"/>
       </a>
     </td>
-    <!-- Kilted -->
     <td>
       <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/kilted-binary-main.yml?query=event%3Aschedule++">
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/kilted-binary-main.yml/badge.svg?event=schedule"
@@ -80,26 +77,24 @@ upstream changes some pipelines might turn red temporarily which can be expected
               alt="Kilted Semi-Binary Testing"/>
       </a>
     </td>
-    <!-- Lyrical -->
-    <td>
+    <td> <!-- Lyrical -->
       <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/lyrical-binary-main.yml?query=event%3Aschedule++">
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/lyrical-binary-main.yml/badge.svg?event=schedule"
-              alt="lyrical Binary Main"/>
+              alt="Lyrical Binary Main"/>
       </a> <br />
       <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/lyrical-binary-testing.yml?query=event%3Aschedule++">
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/lyrical-binary-testing.yml/badge.svg?event=schedule"
-              alt="lyrical Binary Testing"/>
+              alt="Lyrical Binary Testing"/>
       </a> <br />
       <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/lyrical-semi-binary-main.yml?query=event%3Aschedule++">
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/lyrical-semi-binary-main.yml/badge.svg?event=schedule"
-              alt="lyrical Semi-Binary Main"/>
+              alt="Lyrical Semi-Binary Main"/>
       </a> <br />
       <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/lyrical-semi-binary-testing.yml?query=event%3Aschedule++">
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/lyrical-semi-binary-testing.yml/badge.svg?event=schedule"
-              alt="lyrical Semi-Binary Testing"/>
+              alt="Lyrical Semi-Binary Testing"/>
       </a>
     </td>
-    <!-- Rolling -->
     <td>
       <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-binary-main.yml?query=event%3Aschedule++">
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-binary-main.yml/badge.svg?event=schedule"
@@ -117,6 +112,24 @@ upstream changes some pipelines might turn red temporarily which can be expected
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/actions/workflows/rolling-semi-binary-testing.yml/badge.svg?event=schedule"
               alt="Rolling Semi-Binary Testing"/>
       </a>
+    </td>
+  </tr>
+  <tr>
+    <th>Buildfarm</th>
+    <td>
+      <a href='https://build.ros2.org/job/Hbin_uJ64__ur_simulation_gz__ubuntu_jammy_amd64__binary/'><img src='https://build.ros2.org/job/Hbin_uJ64__ur_simulation_gz__ubuntu_jammy_amd64__binary/badge/icon?subject=uJ64_ur_simulation_gz'></a>
+    </td>
+    <td>
+      <a href='https://build.ros2.org/job/Jbin_uN64__ur_simulation_gz__ubuntu_noble_amd64__binary/'><img src='https://build.ros2.org/job/Jbin_uN64__ur_simulation_gz__ubuntu_noble_amd64__binary/badge/icon?subject=uN64_ur_simulation_gz'></a>
+    </td>
+    <td>
+      <a href='https://build.ros2.org/job/Kbin_uN64__ur_simulation_gz__ubuntu_noble_amd64__binary/'><img src='https://build.ros2.org/job/Kbin_uN64__ur_simulation_gz__ubuntu_noble_amd64__binary/badge/icon?subject=uN64_ur_simulation_gz'></a>
+    </td>
+    <td>
+      <a href='https://build.ros2.org/job/Lbin_uR64__ur_simulation_gz__ubuntu_resolute_amd64__binary/'><img src='https://build.ros2.org/job/Lbin_uR64__ur_simulation_gz__ubuntu_resolute_amd64__binary/badge/icon?subject=uR64_ur_simulation_gz'></a>
+    </td>
+    <td>
+      <a href='https://build.ros2.org/job/Rbin_uR64__ur_simulation_gz__ubuntu_resolute_amd64__binary/'><img src='https://build.ros2.org/job/Rbin_uR64__ur_simulation_gz__ubuntu_resolute_amd64__binary/badge/icon?subject=uR64_ur_simulation_gz'></a>
     </td>
   </tr>
 </table>
