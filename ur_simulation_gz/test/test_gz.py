@@ -55,7 +55,6 @@ from test_common import (  # noqa: E402
     ActionInterface,
 )
 
-
 # Increased timeout since sim_time could be slower... TODO: Make this more properly
 TIMEOUT_EXECUTE_TRAJECTORY = 60
 
