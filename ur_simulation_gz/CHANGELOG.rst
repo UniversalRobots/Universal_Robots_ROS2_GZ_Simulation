@@ -2,6 +2,15 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add support for g-series robots (`#148 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/148>`_)
+* Increase minimum CMake version to 3.28 (`#144 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/144>`_)
+* BREAKING: Update package to latest upstream changes (`#131 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/131>`_)
+* [Docs] Add section label (`#129 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/129>`_)
+* add servo launch argument (`#128 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/128>`_)
+* Contributors: Felix Exner, Jennifer Buehler
+
 2.5.0 (2025-10-13)
 ------------------
 * Add support for UR18 (`#118 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/118>`_)
