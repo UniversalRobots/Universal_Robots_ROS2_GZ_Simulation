@@ -54,6 +54,9 @@ from ament_index_python.packages import get_package_share_directory
         "ur18",
         "ur20",
         "ur30",
+        "ur10g-1750",
+        "ur17g-1300",
+        "ur18g-950",
     ],
 )
 @pytest.mark.parametrize("prefix", ["", "my_ur_"])
