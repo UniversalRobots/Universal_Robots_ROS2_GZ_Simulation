@@ -2,8 +2,8 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.6.0 (2026-11-09)
+------------------
 * Feat/g series support (backport `#148 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/148>`_) (`#151 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/151>`_)
 * ParameterValue for robot_description
 * Contributors: Felix Exner, Giorgio Medico, mergify[bot]
