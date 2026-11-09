@@ -2,8 +2,8 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+3.0.0 (2026-11-09)
+------------------
 * Add support for g-series robots (`#148 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/148>`_)
 * Increase minimum CMake version to 3.28 (`#144 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/144>`_)
 * BREAKING: Update package to latest upstream changes (`#131 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/131>`_)
