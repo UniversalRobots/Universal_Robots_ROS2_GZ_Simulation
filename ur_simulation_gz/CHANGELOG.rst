@@ -2,8 +2,8 @@
 Changelog for package ur_simulation_gz
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.6.0 (2026-11-09)
+------------------
 * Add support for g-series robots (backport `#148 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/148>`_) (`#152 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/152>`_)
 * [Docs] Add section label (`#129 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/129>`_)
 * add servo launch argument (`#128 <https://github.com/UniversalRobots/Universal_Robots_ROS2_GZ_Simulation/issues/128>`_)
